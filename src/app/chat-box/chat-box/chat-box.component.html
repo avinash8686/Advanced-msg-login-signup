@@ -1,0 +1,410 @@
+<div class="container" style="padding-top:75px;">
+  <div class="row" style="height:500px">
+
+    <!-- Start of Left Part -->
+    <div class="col-md-4 p-0 bg-secondary">
+      <div class="user scroll">
+
+        <!-- User Name -->
+        <nav class="row navbar bg-secondary m-0">
+          <div class="col-md-10 d-flex justify-content-center">
+            <h4 class="p-4 text-truncate">{{userInfo.firstName}} {{userInfo.lastName}}</h4>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end">
+            <a href="#" class="p-4" style="text-decoration: none; color:black">
+              <i class="fa fa-power-off" style="font-size:24px"></i>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Online users names -->
+        <nav class="row m-0 navbar bg-dark sticky-top">
+          <div class="col-12 ">
+            <h6 class="text-white p-2">Online Users:</h6>
+          </div>
+        </nav>
+
+        <!-- Friends -->
+
+        <!-- Friend 1 -->
+        <ng-container *ngFor="let user of userList">
+          <ng-container *ngIf="userInfo.userId !== user.userId">
+            <div  id="online-user" style="text-decoration: none; color:black"
+             (click)="userSelectedToChat(user.userId, user.name)">
+              <div class="row m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+                <div class="col-md-2 p-3 d-flex justify-content-center">
+                  <img src="../../assets/images/icon.png" alt="" style="width:40px;height:40px">
+                </div>
+                <div class="col-md-10 p-3">
+                  <div class="row">
+                    <div class="col-10 d-flex justify-content-start">
+                      <h4 class="text-truncate m-0 pb-3">{{user.name}}</h4>
+                    </div>
+                    <div class="col-2 d-flex justify-content-end">
+                      <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+
+
+        
+        <!-- <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>Rahul</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>Rajkumar</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>Rajkumar</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>Chandu</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>SaiKumar</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+       
+        <div class="row p-2 m-0 p-2 border border-top-0 border-left-0 border-right-0 border-dark">
+          <div class="col-md-2 p-3 d-flex justify-content-center">
+            <img src="images/icon.png" alt="" style="width:40px;height:40px">
+          </div>
+          <div class="col-md-10 p-3">
+            <div class="row">
+              <div class="col-10">
+                <h4>Master</h4>
+              </div>
+              <div class="col-2">
+                <i class="fa fa-circle" style="font-size:24px;color: #00c8b1"></i>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+    <!-- End of Left Part -->
+
+
+    <!-- Start of Right Part -->
+    <div class="col-md-8 p-0">
+
+      <!-- NavBar for chatting friend name-->
+      <nav class="row m-0 navbar sticky-top bg-light border border-top-0 border-left-0 border-right-0 border-dark">
+        <div class="col-md-11 p-0">
+          <div class="row m-0">
+            <div class="col-md-2 p-2 d-flex justify-content-center">
+              <img src="../../assets/images/icon.png" alt="" style="width:50px;height:50px">
+            </div>
+            <div class="col-md-10 p-2 d-flex align-items-start">
+              <h4>Chat with {{receiverName}}</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1 p-3">
+          <i class="fa fa-ellipsis-v" style="font-size:24px"></i>
+        </div>
+      </nav>
+
+      <!-- All the chat part -->
+      <div style="height:335px" class="scroll bg-warning">
+        <div class="container">
+          
+          <div class="my-2 row" *ngFor="let message of messageList">
+            
+              <div class="col-12">
+                <p class="bg-light rounded p-2" [ngClass] = "{'float-right': message.senderId === userInfo.userId, 'float-left': message.senderId !== userInfo.userId}">{{message.message}}</p>
+              </div>
+            
+          </div>
+          
+          <!-- <div class="row mb-1">
+            <div class="col-sm-4 col-2">
+
+            </div>
+            <div class="col-sm-8 col-10 d-flex justify-content-end">
+              <p class="bg-light rounded p-2">Here's a pic taken by it</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-8 col-10 d-flex justify-content-start">
+              <p class="bg-light rounded p-2">Clarity was too good.</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-4 col-2">
+
+            </div>
+            <div class="col-sm-8 col-10 d-flex justify-content-end">
+              <p class="bg-light rounded p-2">How is the pic?</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-8 col-10 d-flex justify-content-start">
+              <p class="bg-light rounded p-2">Awesome Scenery</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-4 col-2">
+
+            </div>
+            <div class="col-sm-8 col-10 d-flex justify-content-end">
+              <p class="bg-light rounded p-2">Yaa, guess what!! It's AI powered.</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-4 col-2">
+
+            </div>
+            <div class="col-sm-8 col-10 d-flex justify-content-end">
+              <p class="bg-light rounded p-2">How is the pic?</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-8 col-10 d-flex justify-content-start">
+              <p class="bg-light rounded p-2">Awesome Scenery</p>
+            </div>
+          </div>
+
+          <div class="row mb-1">
+            <div class="col-sm-4 col-2">
+
+            </div>
+            <div class="col-sm-8 col-10 d-flex justify-content-end">
+              <p class="bg-light rounded p-2">Yaa, guess what!! It's AI powered.</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+
+      <!-- Bottom input part and emoji part -->
+      <nav class="navbar sticky-top bg-dark row m-0 txt-two pt-4 d-flex justify-content-center">
+        <div class="col-1 d-flex justify-content-start align-items-center">
+          <a href="#" data-toggle="tooltip" data-placement="top" title="emojis !" class="text-dark">
+            <h4>
+              <i class="fa fa-smile-o bg-white p-2 rounded"></i>
+            </h4>
+          </a>
+        </div>
+
+        <div class="col-9 pr-0 pb-2">
+          <form class="form-block">
+            <input type="text" class="form-control rounded-0" (keydown)="sendMessageUsingKeypress($event)" name="messageText" [(ngModel)] = "messageText"  placeholder="Type a Msg...">
+          </form>
+        </div>
+
+        <!-- the message is submitted in two ways -->
+        <!-- Using the above keydown or by using the below button -->
+
+        <div class="col-1 pl-0 pb-2">
+          <form class="form-block">
+            <button (click)="sendMessage()" class="btn btn-default rounded-0">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="col-1 d-flex justify-content-end align-items-center">
+          <a href="#" data-toggle="tooltip" data-placement="top" title="Mic !" class="text-dark">
+            <h4 class="d-flex align-items-start">
+              <i class="fa fa-microphone bg-white p-2 rounded"></i>
+            </h4>
+          </a>
+        </div>
+        
+      </nav>
+
+    </div>
+    <!-- End of Right Part -->
+
+
+  </div>
+</div>
+
+
+
+<!-- <div class="container bg-dark">
+  
+  <h1 class="text-white p-3">
+    {{userInfo.firstName}} {{userInfo.lastName}}
+  </h1>
+</div>
+
+<div class="container bg-secondary" style="height:350px">
+  
+  <ng-container *ngFor="let user of userList">
+    <ng-container *ngIf="user.userId !== userInfo.userId">
+      <p><i class="fa fa-circle" style="color:	#7FFF00;font-size:12px"></i> {{user.name}}</p>
+    </ng-container>
+  </ng-container>
+</div> -->
+
+
+<!-- <div class="container">
+  <div class="row">
+
+    <div class="displayBlockMobile" style="position:fixed;width:100%;z-index:1;">
+
+      <div class="col-sm-12 p-0">
+
+        <nav class="navbar navbar-expand-md navbar-fixed navbar-dark bg-dark">
+
+          <a class="navbar-brand text-white">
+            {{userInfo.firstName}} {{userInfo.lastName}}
+            <i class="online" *ngIf="disconnectedSocket == false"></i>
+            <i class="offline" *ngIf="disconnectedSocket == true"></i>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+          </button>
+
+          <div class="collapse people-list navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="list">
+              <li class="p-2 typeOfChats">
+                Online Users:
+              </li>
+              <li class="clearfix cursorPointer" [ngClass]="{'activeChat': user.chating == true}" *ngFor="let user of userList">
+                <div class="userPresence" *ngIf="user.userId != userInfo.userId">
+                  {{user.name}}
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </nav>
+
+      </div>
+
+    </div> -->
+
+    <!-- <div class="col-12 displayNoneMobile col-sm-4 col-md-4 people-list p-0" id="people-list">
+
+      <div class="p-3 text-white textCapitalize textCenter">
+        {{userInfo.firstName}} {{userInfo.lastName}}
+        <i class="fa fa-circle online" *ngIf="disconnectedSocket == false"></i>
+        <i class="fa fa-circle offline" *ngIf="disconnectedSocket == true"></i>
+        <br>
+        <br>
+
+      </div>
+
+      <ul class="list">
+        <li class="p-2 typeOfChats">
+          Online Users:
+        </li>
+        <li class="clearfix cursorPointer" [ngClass]="{'activeChat': user.chating == true}" *ngFor="let user of userList">
+          <div class="userPresence" *ngIf="user.userId != userInfo.userId">
+
+            
+
+            {{user.name}}
+
+            
+          </div>
+        </li>
+
+      </ul>
+
+
+    </div> -->
+
+
+
+  <!-- </div> -->
+  <!-- end chat -->
+<!-- 
+</div> -->
+<!-- end container -->
